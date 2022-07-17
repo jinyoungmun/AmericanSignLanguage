@@ -57,12 +57,12 @@ while True:
             angle = np.arccos(np.einsum('nt, nt->n', compareWithV1, compareWithV2))
 
             angle = np.degrees(angle)
-            if keyboard.is_pressed('a'): # a를 누를시 현재 데이터(angle)가 txt파일에 저장됨
+            if keyboard.is_pressed('a'):
                 for num in angle:
                     num = round(num, 6)
                     collect.write(str(num))
                     collect.write(',')
-                collect.write("27.000000") #데이터를 저장할 gesture의 label번호
+                collect.write("27.000000")
                 collect.write('\n')
                 print("next")
             data = np.array([angle], dtype=np.float32)
